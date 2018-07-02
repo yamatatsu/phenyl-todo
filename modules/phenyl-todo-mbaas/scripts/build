@@ -1,0 +1,5 @@
+#!/bin/sh
+# set -eux
+
+rm -rf dist && mkdir -p dist
+babel src --out-dir dist --source-maps

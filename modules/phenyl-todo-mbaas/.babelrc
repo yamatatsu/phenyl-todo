@@ -1,0 +1,8 @@
+{
+  "presets": [["env", { "exclude": ["transform-regenerator"] }], "flow"],
+  "plugins": [
+    "babel-plugin-transform-strip-jsnext",
+    "babel-plugin-transform-class-properties",
+    "babel-plugin-transform-object-rest-spread"
+  ]
+}

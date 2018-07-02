@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "main": "src/index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "NODE_ENV=development nodemon src/index.js --exec babel-node --watch src",
+    "server": "node dist/index.js",
+    "build": "./scripts/build"
+  },
   "dependencies": {
     "express": "^4.16.3",
     "phenyl-central-state": "^0.2.5",
@@ -13,5 +18,18 @@
     "phenyl-rest-api": "^0.3.5",
     "phenyl-standards": "^0.2.5",
     "phenyl-utils": "^0.2.5"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-class-properties": "~6.24.1",
+    "babel-plugin-transform-object-rest-spread": "~6.26.0",
+    "babel-plugin-transform-strip-jsnext": "^2.0.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0",
+    "babel-register": "^6.26.0",
+    "chalk": "~2.4.1",
+    "node-fetch": "~2.1.2",
+    "nodemon": "~1.13.3",
+    "phenyl-interfaces": "~0.2.2"
   }
 }
