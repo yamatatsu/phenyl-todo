@@ -1,0 +1,17 @@
+{
+  "name": "phenyl-todo-mbaas",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3",
+    "phenyl-central-state": "^0.2.5",
+    "phenyl-express": "^0.2.6",
+    "phenyl-http-client": "^0.2.6",
+    "phenyl-memory-db": "^0.2.5",
+    "phenyl-mongodb": "^0.4.3",
+    "phenyl-rest-api": "^0.3.5",
+    "phenyl-standards": "^0.2.5",
+    "phenyl-utils": "^0.2.5"
+  }
+}
