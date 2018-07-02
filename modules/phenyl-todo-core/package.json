@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "src/index.js",
   "license": "MIT",
+  "private": true,
   "dependencies": {
     "phenyl-http-client": "^0.2.6",
     "phenyl-redux": "^0.3.5",

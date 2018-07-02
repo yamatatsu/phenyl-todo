@@ -3,6 +3,24 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "modules/*"
+    ],
+    "nohoist": [
+      "**/react-native",
+      "**/react-native/**",
+      "**/react-native-scripts",
+      "**/react-native-scripts/**",
+      "**/expo",
+      "**/expo/**",
+      "**/react-navigation",
+      "**/react-navigation/**",
+      "**/phenyl-http-client",
+      "**/phenyl-http-client/**"
+    ]
+  },
   "devDependencies": {
     "babel-eslint": "^8.2.5",
     "eslint": "^5.0.1",
