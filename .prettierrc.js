@@ -1,4 +1,4 @@
 module.exports = {
   parser: "flow",
-  trailingComma: "es5"
+  trailingComma: "es5",
 };
