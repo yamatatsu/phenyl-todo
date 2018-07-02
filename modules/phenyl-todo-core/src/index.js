@@ -3,5 +3,5 @@ import thunk from "redux-thunk";
 import logger from "redux-logger";
 
 const reducer = () => ({});
-export const createStore = (middlewares = []) =>
+export const createStore = (...middlewares) =>
   createReduxStore(reducer, applyMiddleware(thunk, logger, ...middlewares));

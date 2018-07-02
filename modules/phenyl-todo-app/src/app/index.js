@@ -1,19 +1,26 @@
+// @flow
 import React from "react";
-import { Provider } from "react-redux";
+import { Provider, connect } from "react-redux";
 import { StyleSheet, Text, View, Button } from "react-native";
 import { createStackNavigator } from "react-navigation";
 import { createStore } from "phenyl-todo-core";
 import NavigationService from "./navigation-service";
+import navigationMiddleware from "./navigation-middleware";
 
-const First = props => {
-  const { navigation } = props;
+const First = connect(
+  null,
+  dispatch => ({
+    handleClick: () => dispatch({ type: "TO_SECOND_CLICKED" }),
+  })
+)(props => {
+  const { handleClick } = props;
   return (
     <View style={styles.container}>
       <Text>first</Text>
-      <Button title="To second" onPress={() => navigation.navigate("Second")} />
+      <Button title="To second" onPress={handleClick} />
     </View>
   );
-};
+});
 const Second = () => {
   return (
     <View style={styles.container}>
@@ -31,7 +38,7 @@ const RootNavigator = createStackNavigator({
   },
 });
 
-const store = createStore();
+const store = createStore(navigationMiddleware);
 
 const App = () => {
   return (
