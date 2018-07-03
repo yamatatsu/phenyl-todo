@@ -2,7 +2,7 @@
 import NavigationService from "../app/navigation-service";
 
 const ACTION_PARAMS_MAP = {
-  TO_SECOND_CLICKED: "Second",
+  LOGIN_BUTTON_CLICKED: "TodoList",
 };
 
 const actionToParams = action => {

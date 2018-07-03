@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "expo": "^27.0.1",
+    "formik": "^0.11.11",
     "phenyl-todo-core": "*",
     "react": "16.3.1",
     "react-native": "~0.55.2",
