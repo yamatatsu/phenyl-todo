@@ -1,11 +1,13 @@
 // @flow
+import { LOGIN_REQUESTED } from "phenyl-todo-core";
+import type { Action } from "phenyl-todo-core";
 import NavigationService from "../app/navigation-service";
 
 const ACTION_PARAMS_MAP = {
-  LOGIN_BUTTON_CLICKED: "TodoList",
+  [LOGIN_REQUESTED]: "TodoList",
 };
 
-const actionToParams = action => {
+const actionToParams = (action: Action) => {
   const nav = ACTION_PARAMS_MAP[action.type];
   if (!nav) {
     return null;
@@ -15,7 +17,7 @@ const actionToParams = action => {
   return nav;
 };
 
-const meddleware = store => next => action => {
+const meddleware = store => next => (action: Action) => {
   const result = next(action);
 
   const params = actionToParams(action);
