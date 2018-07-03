@@ -9,11 +9,13 @@ import {
   TextInput,
 } from "react-native";
 import { Formik } from "formik";
+import { actions } from "phenyl-todo-core";
 
 const Login = connect(
   null,
   dispatch => ({
-    handleLogin: () => dispatch({ type: "LOGIN_BUTTON_CLICKED" }),
+    handleLogin: (email, password) =>
+      dispatch(actions.loginRequested(email, password)),
   })
 )(props => {
   const { handleLogin } = props;
@@ -39,8 +41,7 @@ const Login = connect(
         return errors;
       }}
       onSubmit={(values, { setSubmitting, setErrors }) => {
-        const typedVlues = (values: { email: string, password: string });
-        handleLogin(typedVlues);
+        handleLogin(values.email, values.password);
         setSubmitting(false);
       }}
       render={({

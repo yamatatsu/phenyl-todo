@@ -1,7 +1,3 @@
-import { createStore as createReduxStore, applyMiddleware } from "redux";
-import thunk from "redux-thunk";
-import logger from "redux-logger";
-
-const reducer = () => ({});
-export const createStore = (...middlewares) =>
-  createReduxStore(reducer, applyMiddleware(thunk, logger, ...middlewares));
+// @flow
+export { default as createStore } from "./store";
+export * as actions from "./actions";
