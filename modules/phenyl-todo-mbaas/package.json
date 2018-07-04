@@ -5,7 +5,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "NODE_ENV=development nodemon src/index.js --exec babel-node --watch src",
+    "start": "NODE_ENV=development DEBUG=* nodemon src/index.js --exec babel-node --watch src",
     "server": "node dist/index.js",
     "build": "./scripts/build"
   },
