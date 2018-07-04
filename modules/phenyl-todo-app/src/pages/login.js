@@ -1,6 +1,5 @@
 // @flow
 import React from "react";
-import { connect } from "react-redux";
 import {
   StyleSheet,
   Text,
@@ -9,15 +8,8 @@ import {
   TextInput,
 } from "react-native";
 import { Formik } from "formik";
-import { actions } from "phenyl-todo-core";
 
-const Login = connect(
-  null,
-  dispatch => ({
-    handleLogin: (email, password) =>
-      dispatch(actions.loginRequested(email, password)),
-  })
-)(props => {
+export default function Login(props) {
   const { handleLogin } = props;
   return (
     // TODO: refactor: add type
@@ -83,9 +75,7 @@ const Login = connect(
       )}
     />
   );
-});
-
-export default Login;
+}
 
 const styles = StyleSheet.create({
   container: {

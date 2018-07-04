@@ -5,7 +5,7 @@ import { createStackNavigator } from "react-navigation";
 import { createStore } from "phenyl-todo-core";
 import NavigationService from "./navigation-service";
 import navigationMiddleware from "./navigation-middleware";
-import Login from "../pages/login";
+import Login from "../pages/login.container.js";
 import TodoList from "../pages/todo-list";
 
 const RootNavigator = createStackNavigator({

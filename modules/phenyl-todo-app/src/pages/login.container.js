@@ -1,63 +1,14 @@
 // @flow
-import React from "react";
-import { Provider, connect } from "react-redux";
-import { StyleSheet, Text, View, Button } from "react-native";
-import { createStackNavigator } from "react-navigation";
-import { createStore } from "phenyl-todo-core";
-import NavigationService from "./navigation-service";
-import navigationMiddleware from "./navigation-middleware";
+import { connect } from "react-redux";
+import { actions } from "phenyl-todo-core";
+import Component from "./login";
 
-const First = connect(
+const Login = connect(
   null,
   dispatch => ({
-    handleClick: () => dispatch({ type: "TO_SECOND_CLICKED" }),
+    handleLogin: (email, password) =>
+      dispatch(actions.loginRequested(email, password)),
   })
-)(props => {
-  const { handleClick } = props;
-  return (
-    <View style={styles.container}>
-      <Text>first</Text>
-      <Button title="To second" onPress={handleClick} />
-    </View>
-  );
-});
-const Second = () => {
-  return (
-    <View style={styles.container}>
-      <Text>Second</Text>
-    </View>
-  );
-};
+)(Component);
 
-const RootNavigator = createStackNavigator({
-  First: {
-    screen: First,
-  },
-  Second: {
-    screen: Second,
-  },
-});
-
-const store = createStore(navigationMiddleware);
-
-const App = () => {
-  return (
-    <Provider store={store}>
-      <RootNavigator
-        ref={navigatorRef => {
-          NavigationService.setTopLevelNavigator(navigatorRef);
-        }}
-      />
-    </Provider>
-  );
-};
-export default App;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+export default Login;
